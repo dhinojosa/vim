@@ -17,7 +17,6 @@ nmap <silent> <BS> :nohlsearch<CR>
 set wildmode=list:longest,full
 set autowrite
 set updatecount=10
-set swapsync
 filetype plugin on
 set ofu=syntaxcomplete#Complete
 set exrc "enable per-directory .vimrc files
