@@ -6,8 +6,8 @@ set smartindent
 set ic
 set hls
 set lbr
-colorscheme buttercream 
-set gfn=Inconsolata\ 12
+colorscheme desertEx 
+set gfn=Droid\ Sans\ Mono\ 11
 set shiftwidth=3
 set matchpairs=<:>
 set ignorecase
