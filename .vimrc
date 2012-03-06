@@ -1,13 +1,15 @@
-set nocompatible
+call pathogen#infect()
 set nu
-syntax on
+set nocompatible
+syntax enable 
 filetype indent on
+filetype plugin indent on
 set smartindent
 set ic
 set hls
 set lbr
-colorscheme desertEx 
-set gfn=Droid\ Sans\ Mono\ 11
+colorscheme solarized 
+set gfn=Inconsolata 14
 set shiftwidth=3
 set matchpairs=<:>
 set ignorecase
@@ -21,3 +23,4 @@ filetype plugin on
 set ofu=syntaxcomplete#Complete
 set exrc "enable per-directory .vimrc files
 set secure "disable unsafe commands in local .vimrc file
+set background=light
