@@ -9,7 +9,7 @@ set ic
 set hls
 set lbr
 colorscheme solarized 
-set gfn=Inconsolata 14
+set gfn=Source\ Code\ Pro\ 12
 set shiftwidth=3
 set matchpairs=<:>
 set ignorecase
