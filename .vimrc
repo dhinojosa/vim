@@ -42,8 +42,8 @@ autocmd BufEnter *.sh colorscheme oceandeep
 "What font to display
 "set gfn=Inconsolata\ 14
 "set gfn=Droid\ Sans\ Mono\ 14
-set gfn=Droid\ Sans\ Mono\ 11
-"set gfn=Source\ Code\ Pro\ 14
+"set gfn=Droid\ Sans\ Mono\ 11
+set gfn=Source\ Code\ Pro\ 14
 "set gfn=Latin\ Modern\ Mono\ 14
 "set gfn=Nimbus\ Mono\ L\ 14
 "set gfn=Ubuntu\ Mono\ 14
