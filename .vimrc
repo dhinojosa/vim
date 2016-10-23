@@ -83,4 +83,4 @@ set dictionary=/usr/share/dict/american-english
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 
-set shell=/bin/zsh -i
+set shell=/bin/zsh
