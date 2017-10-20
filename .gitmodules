@@ -31,3 +31,9 @@
 [submodule "bundle/vim-speeddating"]
 	path = bundle/vim-speeddating
 	url = git@github.com:tpope/vim-speeddating.git
+[submodule "bundle/vim-licenses"]
+	path = bundle/vim-licenses
+	url = https://github.com/antoyo/vim-licenses
+[submodule "bundle/nova-vim"]
+	path = bundle/nova-vim
+	url = git@github.com:trevordmiller/nova-vim.git
