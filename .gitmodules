@@ -33,7 +33,7 @@
 	url = git@github.com:tpope/vim-speeddating.git
 [submodule "bundle/vim-licenses"]
 	path = bundle/vim-licenses
-	url = https://github.com/antoyo/vim-licenses
+	url = git@github.com:dhinojosa/vim-licenses.git
 [submodule "bundle/nova-vim"]
 	path = bundle/nova-vim
 	url = git@github.com:trevordmiller/nova-vim.git
