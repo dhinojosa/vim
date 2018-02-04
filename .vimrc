@@ -42,6 +42,7 @@ autocmd BufEnter *.sh colorscheme oceandeep
 autocmd BufEnter activityinventory.txt colorscheme nova
 autocmd BufEnter todotoday.txt colorscheme nova
 autocmd BufEnter *outline.txt colorscheme nova
+autocmd BufEnter *.txt colorscheme atom
 autocmd BufEnter *.asc colorscheme nova
 autocmd BufEnter *.elm colorscheme kalisi
 autocmd BufEnter .vimrc colorscheme cthulhian
