@@ -13,9 +13,6 @@
 [submodule "bundle/vim-scala"]
 	path = bundle/vim-scala
 	url = git@github.com:derekwyatt/vim-scala.git
-[submodule "bundle/vim-colorschemes"]
-	path = bundle/vim-colorschemes
-	url = git@github.com:flazz/vim-colorschemes.git
 [submodule "bundle/VimClojure"]
 	path = bundle/VimClojure
 	url = git@github.com:vim-scripts/VimClojure.git
