@@ -74,3 +74,10 @@ Salesforce
 varargs
 Polymorphism
 classpath
+Stateful
+scalable
+Completable
+Transactional
+subtype
+Untyped
+inferencer

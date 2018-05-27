@@ -39,9 +39,9 @@ autocmd BufEnter *.xml colorscheme gravity
 autocmd BufEnter *.js colorscheme mayansmoke
 autocmd BufEnter *.groovy colorscheme rakr-light
 autocmd BufEnter *.sh colorscheme oceandeep
-autocmd BufEnter activityinventory.txt colorscheme nova
-autocmd BufEnter todotoday.txt colorscheme nova
-autocmd BufEnter *outline.txt colorscheme nova
+autocmd BufEnter activityinventory.txt colorscheme softblue
+autocmd BufEnter todotoday.txt colorscheme softblue
+autocmd BufEnter *outline.txt colorscheme softblue
 autocmd BufEnter *.txt colorscheme atom
 autocmd BufEnter *.asc colorscheme nova
 autocmd BufEnter *.elm colorscheme kalisi
@@ -84,7 +84,7 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set list
 set nowrap
 
-"Show the ruler showing the columns, rows, and percentages
+"how the ruler showing the columns, rows, and percentages
 set ruler
 
 "Set the spelling language
@@ -109,7 +109,7 @@ iabbrev adn and
 iabbrev teh the
 iabbrev waht what
 
-"Make sure you have this per file type
+"Asciidoctor Code Blocks
 ab asca [source, scala, subs="attributes,quotes,verbatim"]<CR>----<CR>----<esc>0<esc>O
 ab ajav [source, java, subs="attributes,quotes,verbatim"]<CR>----<CR>----<esc>0<esc>O
 ab agro [source, groovy, subs="attributes,quotes,verbatim"]<CR>----<CR>----<esc>0<esc>O
@@ -119,15 +119,19 @@ ab axml [source, xml, subs="attributes,quotes,verbatim"]<CR>----<CR>----<esc>0<e
 ab ajso [source, json, subs="attributes,quotes,verbatim"]<CR>----<CR>----<esc>0<esc>O
 ab anon [source, subs="attributes,quotes,verbatim"]<CR>----<CR>----<esc>0<esc>O
 ab asql [source, sql, subs="attributes,quotes,verbatim"]<CR>----<CR>----<esc>0<esc>O
+ab apyt [source, python, subs="attributes,quotes,verbatim"]<CR>----<CR>----<esc>0<esc>O
+
+"Asciidoctor Components
+ab atab [cols=2*,options="header"]<CR>\|===<CR>\|Name of Column 1<CR>\|Name of Column 2<CR><CR>\|Cell in column 1, row 1<CR>\|Cell in column 2, row 1<CR><CR>\|Cell in column 1, row 2<CR>\|Cell in column 2, row 2<CR>\|===
 
 "Elm Abbreviations
 ab elmmainsimple main : Program Never model msg<CR>main = beginnerProgram {model = model,<CR>view  = view,<CR>update=update}<CR>
-ab elmupdatesimple update : msg -> model -> model<CR>
-ab elmupdate update : msg -> model -> (model, Cmd msg)<CR>update mg mod = (mod, Cmd.none)
-ab elmsub subscriptions : model -> Sub msg<CR>subscriptions model = (Sub.none)
-ab elmview view : Model -> Html msg<CR>view model -> text("Hello World")
-ab elminit init : (model, Cmd msg)<CR>init = (model, Cmd.none)
-ab elmmain main : Program Never model msg<CR>main = Html.program {<CR>init = init,<CR>view = view,<CR>update = update,<CR>subscriptions = subscriptions<CR>}
+ab elmupdatesimple update : msg -> model -> model<CR>update msg mod = mod
+ab elmupdate update : msg -> model -> (model, Cmd msg)<CR>update msg mod = (mod, Cmd.none)
+ab elmsub subscriptions : model -> Sub msg<CR>subscriptions mod = (Sub.none)
+ab elmview view : Model -> Html msg<CR>view mod = text("Hello World")
+ab elminit init : (Model, Cmd Msg)<CR>init = (Model, Cmd.none)
+ab elmmain main : Program Never Model Msg<CR>main = Html.program {<CR>init = init,<CR>view = view,<CR>update = update,<CR>subscriptions = subscriptions<CR>}
 
 "Java Abbreviations
 ab psvm public static void main(String[] args) {<CR><CR>}
