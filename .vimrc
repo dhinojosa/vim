@@ -42,27 +42,27 @@ autocmd BufEnter *.sh colorscheme oceandeep
 autocmd BufEnter activityinventory.txt colorscheme softblue
 autocmd BufEnter todotoday.txt colorscheme softblue
 autocmd BufEnter *outline.txt colorscheme softblue
-autocmd BufEnter *.txt colorscheme atom
-autocmd BufEnter *.asc colorscheme nova
+autocmd BufEnter *.txt colorscheme Slate
+autocmd BufEnter *.asc colorscheme aqua
 autocmd BufEnter *.elm colorscheme kalisi
 autocmd BufEnter .vimrc colorscheme cthulhian
 autocmd BufEnter .md colorscheme softbluev2
+autocmd BufEnter .cs colorscheme nefertiti
 
-
-"What font to display
-"set gfn=Inconsolata\ 16
-"set gfn=Droid\ Sans\ Mono\ 16
-"set gfn=Droid\ Sans\ Mono\ 11
-set gfn=Source\ Code\ Pro:h16
-"set gfn=Latin\ Modern\ Mono\ 16
-"set gfn=Nimbus\ Mono\ L\ 16
-"set gfn=Ubuntu\ Mono\ 16
-"set gtn=Tlwg\ Mono\ 16
-"set gfn=Cousine\ 16
-"set gfn=Courier\ 16
-"set gfn=Anonymous\ Pro\ 16
-"set gfn=Free\ Mono\ 16
-"set gfn=Oxygen\ Mono\ 16
+" What font to display
+"set guifont=Inconsolata:h15
+"set guifont=DroidSansMono:h15
+"set guifont=SourceCodePro:h15
+"set guifont=LatinModernMono:h15
+"set guifont=NimbusMonoL:h15
+"set guifont=UbuntuMono:h15
+"set guifont=TlwgMono:h15
+"set guifont=Cousine:h15
+"set guifont=Courier:h15
+"set guifont=AnonymousPro:h15
+"set guifont=FreeMono:h15
+"set guifont=OxygenMono:h15
+set guifont=IBMPlexMono:h15
 
 " How to handle tabs and widths
 set expandtab
@@ -97,12 +97,25 @@ set dictionary=/usr/share/dict/american-english
 highlight ColorColumn ctermbg=147
 call matchadd('ColorColumn', '\%81v', 100)
 
+"Set shell
 set shell=/bin/zsh
 
+"Location of tags
 set tags=tags,./tags
 
+"Information for licenses used by license plugin
 let g:licenses_copyright_holders_name = 'Hinojosa, Daniel <dhinojosa@evolutionnext.com>'
 let g:licenses_authors_name = 'Hinojosa, Daniel <dhinojosa@evolutionnext.com>'
+
+"Relative Line Number https://jeffkreeftmeijer.com/vim-number/
+
+:set number relativenumber
+
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
 
 "Common misspelled words
 iabbrev adn and
@@ -124,16 +137,11 @@ ab apyt [source, python, subs="attributes,quotes,verbatim"]<CR>----<CR>----<esc>
 "Asciidoctor Components
 ab atab [cols=2*,options="header"]<CR>\|===<CR>\|Name of Column 1<CR>\|Name of Column 2<CR><CR>\|Cell in column 1, row 1<CR>\|Cell in column 2, row 1<CR><CR>\|Cell in column 1, row 2<CR>\|Cell in column 2, row 2<CR>\|===
 
-"Elm Abbreviations
-ab elmmainsimple main : Program Never model msg<CR>main = beginnerProgram {model = model,<CR>view  = view,<CR>update=update}<CR>
-ab elmupdatesimple update : msg -> model -> model<CR>update msg mod = mod
-ab elmupdate update : msg -> model -> (model, Cmd msg)<CR>update msg mod = (mod, Cmd.none)
-ab elmsub subscriptions : model -> Sub msg<CR>subscriptions mod = (Sub.none)
-ab elmview view : Model -> Html msg<CR>view mod = text("Hello World")
-ab elminit init : (Model, Cmd Msg)<CR>init = (Model, Cmd.none)
-ab elmmain main : Program Never Model Msg<CR>main = Html.program {<CR>init = init,<CR>view = view,<CR>update = update,<CR>subscriptions = subscriptions<CR>}
+"Elm Simple Abbreviations
+ab elmsandbox main : Program () model msg<CR>main = sandbox {init = model<CR>                    ,view = model -> Html msg<CR>,update = msg -> model -> model<CR>}<CR>
+ab elmelement main : Program flags model msg<CR>main = element { init : flags -> ( model, Cmd msg )<CR>           , view : model -> Html msg<CR>, update : msg -> model -> ( model, Cmd msg )<CR>, subscriptions : model -> Sub msg<CR>}<CR>
+ab elmdocument main: Program flags model msg<CR>main = document { init : flags -> ( model, Cmd msg )<CR>           , view : model -> Document msg<CR>, update : msg -> model -> ( model, Cmd msg )<CR>, subscriptions : model -> Sub msg<CR>}<CR>
 
 "Java Abbreviations
-ab psvm public static void main(String[] args) {<CR><CR>}
+ab psvm public static void main(String[] args) {<CR>   <CR>}
 ab sout System.out.println(
-

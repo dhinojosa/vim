@@ -37,3 +37,9 @@
 [submodule "bundle/vim-colorschemes"]
 	path = bundle/vim-colorschemes
 	url = git@github.com:flazz/vim-colorschemes.git
+[submodule "bundle/vim-carbon-now-sh"]
+	path = bundle/vim-carbon-now-sh
+	url = https://github.com/kristijanhusak/vim-carbon-now-sh
+[submodule "bundle/ctrlp.vim"]
+	path = bundle/ctrlp.vim
+	url = git@github.com:kien/ctrlp.vim.git
