@@ -18,14 +18,16 @@ set lbr
 "set background=light
 
 "colorscheme reliable
-colorscheme codeschool
+"colorscheme codeschool
 "colorscheme zenburn
 "colorscheme pyte
 "colorscheme obsidian2
 "colorscheme darktango
 "colorscheme proton
 "colorscheme codeburn
+colorscheme seoul256-light
 
+autocmd BufEnter *.md colorscheme two2tango
 autocmd BufEnter *.clj colorscheme marklar
 autocmd BufEnter *.scala colorscheme tesla
 autocmd BufEnter *.sbt colorscheme tesla
@@ -39,10 +41,11 @@ autocmd BufEnter *.xml colorscheme gravity
 autocmd BufEnter *.js colorscheme mayansmoke
 autocmd BufEnter *.groovy colorscheme rakr-light
 autocmd BufEnter *.sh colorscheme oceandeep
-autocmd BufEnter activityinventory.txt colorscheme softblue
-autocmd BufEnter todotoday.txt colorscheme softblue
+autocmd BufEnter activityinventory.md colorscheme softblue
+autocmd BufEnter todotoday.md colorscheme softblue
 autocmd BufEnter *outline.txt colorscheme softblue
 autocmd BufEnter *.txt colorscheme Slate
+autocmd BufEnter *.yaml colorscheme doorhinge
 autocmd BufEnter *.asc colorscheme aqua
 autocmd BufEnter *.elm colorscheme kalisi
 autocmd BufEnter .vimrc colorscheme cthulhian
@@ -52,7 +55,7 @@ autocmd BufEnter .cs colorscheme nefertiti
 " What font to display
 "set guifont=Inconsolata:h15
 "set guifont=DroidSansMono:h15
-"set guifont=SourceCodePro:h15
+set guifont=Source\ Code\ Pro:h15
 "set guifont=LatinModernMono:h15
 "set guifont=NimbusMonoL:h15
 "set guifont=UbuntuMono:h15
@@ -62,7 +65,8 @@ autocmd BufEnter .cs colorscheme nefertiti
 "set guifont=AnonymousPro:h15
 "set guifont=FreeMono:h15
 "set guifont=OxygenMono:h15
-set guifont=IBMPlexMono:h15
+"set guifont=IBMPlexMono:h15
+"set guifont=JetBrainsMono-Regular:h15
 
 " How to handle tabs and widths
 set expandtab
@@ -117,22 +121,28 @@ let g:licenses_authors_name = 'Hinojosa, Daniel <dhinojosa@evolutionnext.com>'
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
 
+"My Leader
+:let mapleader = "-"
+:let maplocalleader = ","
+
 "Common misspelled words
 iabbrev adn and
 iabbrev teh the
 iabbrev waht what
 
 "Asciidoctor Code Blocks
-ab asca [source, scala, subs="attributes,quotes,verbatim"]<CR>----<CR>----<esc>0<esc>O
-ab ajav [source, java, subs="attributes,quotes,verbatim"]<CR>----<CR>----<esc>0<esc>O
-ab agro [source, groovy, subs="attributes,quotes,verbatim"]<CR>----<CR>----<esc>0<esc>O
-ab ash [source, sh, subs="attributes,quotes,verbatim"]<CR>----<CR>----<esc>0<esc>O
-ab ahas [source, haskell, subs="attributes,quotes,verbatim"]<CR>----<CR>----<esc>0<esc>O
-ab axml [source, xml, subs="attributes,quotes,verbatim"]<CR>----<CR>----<esc>0<esc>O
-ab ajso [source, json, subs="attributes,quotes,verbatim"]<CR>----<CR>----<esc>0<esc>O
-ab anon [source, subs="attributes,quotes,verbatim"]<CR>----<CR>----<esc>0<esc>O
-ab asql [source, sql, subs="attributes,quotes,verbatim"]<CR>----<CR>----<esc>0<esc>O
-ab apyt [source, python, subs="attributes,quotes,verbatim"]<CR>----<CR>----<esc>0<esc>O
+ab asca [source, scala, subs="attributes,quotes,verbatim"]<CR>----<CR><CR>----<esc>0ki
+ab ajav [source, java, subs="attributes,quotes,verbatim"]<CR>----<CR><CR>----<esc>0ki
+ab agro [source, groovy, subs="attributes,quotes,verbatim"]<CR>----<CR><CR>----<esc>0ki
+ab ash [source, sh, subs="attributes,quotes,verbatim"]<CR>----<CR>$<CR>----<esc>0kli
+ab ashr [source, sh, subs="attributes,quotes,verbatim"]<CR>----<CR>%<CR>----<esc>kli
+ab ahas [source, haskell, subs="attributes,quotes,verbatim"]<CR>----<CR><CR>----<esc>0ki
+ab axml [source, xml, subs="attributes,quotes,verbatim"]<CR>----<CR><CR>----<esc>0ki
+ab ajso [source, json, subs="attributes,quotes,verbatim"]<CR>----<CR><CR>----<esc>0ki
+ab anon [source, subs="attributes,quotes,verbatim"]<CR>----<CR><CR>----<esc>0ki
+ab asql [source, sql, subs="attributes,quotes,verbatim"]<CR>----<CR><CR>----<esc>0ki
+ab apyt [source, python, subs="attributes,quotes,verbatim"]<CR>----<CR><CR>----<esc>0ki
+ab ayam [source, yaml, subs="attributes,quotes,verbatim"]<CR>----<CR><CR>----<esc>0ki
 
 "Asciidoctor Components
 ab atab [cols=2*,options="header"]<CR>\|===<CR>\|Name of Column 1<CR>\|Name of Column 2<CR><CR>\|Cell in column 1, row 1<CR>\|Cell in column 2, row 1<CR><CR>\|Cell in column 1, row 2<CR>\|Cell in column 2, row 2<CR>\|===
@@ -145,3 +155,7 @@ ab elmdocument main: Program flags model msg<CR>main = document { init : flags -
 "Java Abbreviations
 ab psvm public static void main(String[] args) {<CR>   <CR>}
 ab sout System.out.println(
+
+"Mappings
+"Trim all lines at the end of the line
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
